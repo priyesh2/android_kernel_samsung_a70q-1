@@ -115,10 +115,12 @@
 #include "udp_impl.h"
 #include <net/sock_reuseport.h>
 #include <net/addrconf.h>
-/* START_OF_KNOX_NPA */
-#include <net/ncm.h>
-/* END_OF_KNOX_NPA */
 #include <net/udp_tunnel.h>
+#ifdef CONFIG_KNOX_NCM
+// KNOX NPA - START
+#include <net/ncm.h>
+// KNOX NPA - END
+#endif
 
 struct udp_table udp_table __read_mostly;
 EXPORT_SYMBOL(udp_table);
@@ -2235,20 +2237,21 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 	sk = skb_steal_sock(skb);
 	if (sk) {
 		struct dst_entry *dst = skb_dst(skb);
-		int ret;
-		
-		/* START_OF_KNOX_NPA */
+#ifdef CONFIG_KNOX_NCM
+		// KNOX NPA - START
 		struct nf_conn *ct = NULL;
 		enum ip_conntrack_info ctinfo;
 		struct nf_conntrack_tuple *tuple = NULL;
 		char srcaddr[INET6_ADDRSTRLEN_NAP];
 		char dstaddr[INET6_ADDRSTRLEN_NAP];
 		// KNOX NPA - END
+#endif
 
 		if (unlikely(sk->sk_rx_dst != dst))
 			udp_sk_rx_dst_set(sk, dst);
-		
-		/* START_OF_KNOX_NPA */
+
+#ifdef CONFIG_KNOX_NCM
+		// KNOX NPA - START
 		/* function to handle open flows with incoming udp packets */
 		if (check_ncm_flag()) {
 			if ( (skb) && (sk) && (sk->sk_protocol == IPPROTO_UDP) ) {
@@ -2294,7 +2297,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 				}
 			}
 		}
-		/* END_OF_KNOX_NPA */
+		// KNOX NPA - END
+#endif
 
 		ret = udp_unicast_rcv_skb(sk, skb, uh);
 		sock_put(sk);
@@ -2307,25 +2311,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 
 	sk = __udp4_lib_lookup_skb(skb, uh->source, uh->dest, udptable);
 	if (sk) {
-		int ret;
-
-		if (inet_get_convert_csum(sk) && uh->check && !IS_UDPLITE(sk))
-			skb_checksum_try_convert(skb, IPPROTO_UDP, uh->check,
-						 inet_compute_pseudo);
-
-		ret = udp_queue_rcv_skb(sk, skb);
-
-		/* a return value > 0 means to resubmit the input, but
-		 * it wants the return to be -protocol, or 0
-		 */
-		if (ret > 0)
-			return -ret;
-		return 0;
-	}
-	if (sk) {
-		int ret;
-		
-		/* START_OF_KNOX_NPA */
+#ifdef CONFIG_KNOX_NCM
+		// KNOX NPA - START
 		struct nf_conn *ct = NULL;
 		enum ip_conntrack_info ctinfo;
 		struct nf_conntrack_tuple *tuple = NULL;
@@ -2383,11 +2370,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 				}
 			}
 		}
-		/* END_OF_KNOX_NPA */
-		
-		if (inet_get_convert_csum(sk) && uh->check && !IS_UDPLITE(sk))
-			skb_checksum_try_convert(skb, IPPROTO_UDP, uh->check,
-						 inet_compute_pseudo);
+		// KNOX NPA - END
+#endif
 
 		ret = udp_queue_rcv_skb(sk, skb);
 
