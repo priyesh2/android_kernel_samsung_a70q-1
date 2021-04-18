@@ -1,0 +1,1 @@
+cmd_techpack/audio/asoc/codecs/bolero/tx_macro_dlkm.o :=  rm -f techpack/audio/asoc/codecs/bolero/tx_macro_dlkm.o; aarch64-linux-android-ar rcSTPD techpack/audio/asoc/codecs/bolero/tx_macro_dlkm.o techpack/audio/asoc/codecs/bolero/tx-macro.o 

@@ -1,0 +1,1 @@
+cmd_drivers/platform/msm/gsi/built-in.o :=   rm -f drivers/platform/msm/gsi/built-in.o; aarch64-linux-android-ar rcSTPD drivers/platform/msm/gsi/built-in.o drivers/platform/msm/gsi/gsi.o drivers/platform/msm/gsi/gsidbg.o 

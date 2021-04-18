@@ -1,0 +1,38 @@
+!<thin>
+//                                              398       `
+power_supply_core.o/
+power_supply_sysfs.o/
+power_supply_leds.o/
+qcom_r1/qpnp-qg.o/
+qcom_r1/pmic-voter.o/
+qcom_r1/qg-util.o/
+qcom_r1/qg-soc.o/
+qcom_r1/qg-sdam.o/
+qcom_r1/qg-battery-profile.o/
+qcom_r1/qg-profile-lib.o/
+qcom_r1/fg-alg.o/
+qcom_r1/step-chg-jeita.o/
+qcom_r1/battery.o/
+qcom_r1/qpnp-smb5.o/
+qcom_r1/smb5-lib.o/
+qcom_r1/storm-watch.o/
+qcom_r1/schgm-flash.o/
+qcom_r1/smb1390-charger-psy.o/
+/0              0           0     0     644     265536    `
+/21             0           0     0     644     183224    `
+/43             0           0     0     644     140704    `
+/64             0           0     0     644     580400    `
+/83             0           0     0     644     136416    `
+/105            0           0     0     644     213224    `
+/124            0           0     0     644     189160    `
+/142            0           0     0     644     144504    `
+/161            0           0     0     644     173544    `
+/191            0           0     0     644     20216     `
+/217            0           0     0     644     82712     `
+/235            0           0     0     644     228848    `
+/261            0           0     0     644     258024    `
+/280            0           0     0     644     482800    `
+/301            0           0     0     644     721744    `
+/321            0           0     0     644     8656      `
+/344            0           0     0     644     193944    `
+/367            0           0     0     644     275544    `

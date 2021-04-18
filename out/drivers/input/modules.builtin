@@ -1,0 +1,17 @@
+kernel/drivers/input/input-core.ko
+kernel/drivers/input/sec_tsp_log.ko
+kernel/drivers/input/ff-memless.ko
+kernel/drivers/input/input-leds.ko
+kernel/drivers/input/evdev.ko
+kernel/drivers/input/keyboard/atkbd.ko
+kernel/drivers/input/keyboard/gpio_keys.ko
+kernel/drivers/input/keyboard/certify_hall_ic.ko
+kernel/drivers/input/misc/qpnp-power-on.ko
+kernel/drivers/input/misc/uinput.ko
+kernel/drivers/input/touchscreen/of_touchscreen.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx_misc.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx_sys.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx_update.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx_sec.ko
+kernel/drivers/input/touchscreen/imagis_40xx/ist40xx_cmcs.ko

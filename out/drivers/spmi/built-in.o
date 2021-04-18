@@ -1,0 +1,15 @@
+!<thin>
+//                                              122       `
+spmi.o/
+spmi-pmic-arb.o/
+simulator/spmi-sim.o/
+simulator/pm8150-sim.o/
+simulator/pm8150b-sim.o/
+simulator/pm8150l-sim.o/
+
+/0              0           0     0     644     387752    `
+/8             /0           0     0     644     274672    `
+/25             0           0     0     644     275088    `
+/47             0           0     0     644     155960    `
+/71             0           0     0     644     144640    `
+/96             0           0     0     644     152776    `

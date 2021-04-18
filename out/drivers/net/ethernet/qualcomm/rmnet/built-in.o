@@ -1,0 +1,17 @@
+!<thin>
+//                                              130       `
+rmnet_data_pm_argos.o/
+rmnet_config.o/
+rmnet_vnd.o/
+rmnet_handlers.o/
+rmnet_map_data.o/
+rmnet_map_command.o/
+rmnet_descriptor.o/
+
+/0              0           0     0     644     261024    `
+/23             0           0     0     644     389584    `
+/39             0           0     0     644     305232    `
+/52             0           0     0     644     471664    `
+/70             0           0     0     644     415216    `
+/88             0           0     0     644     255784    `
+/109            0           0     0     644     417480    `

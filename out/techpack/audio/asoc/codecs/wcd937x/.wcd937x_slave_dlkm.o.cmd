@@ -1,0 +1,1 @@
+cmd_techpack/audio/asoc/codecs/wcd937x/wcd937x_slave_dlkm.o :=  rm -f techpack/audio/asoc/codecs/wcd937x/wcd937x_slave_dlkm.o; aarch64-linux-android-ar rcSTPD techpack/audio/asoc/codecs/wcd937x/wcd937x_slave_dlkm.o techpack/audio/asoc/codecs/wcd937x/wcd937x_slave.o 

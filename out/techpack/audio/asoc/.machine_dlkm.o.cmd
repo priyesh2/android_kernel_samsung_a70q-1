@@ -1,0 +1,1 @@
+cmd_techpack/audio/asoc/machine_dlkm.o :=  rm -f techpack/audio/asoc/machine_dlkm.o; aarch64-linux-android-ar rcSTPD techpack/audio/asoc/machine_dlkm.o techpack/audio/asoc/sm6150.o techpack/audio/asoc/sec_wcd_sysfs_cb.o 

@@ -1,0 +1,35 @@
+!<thin>
+//                                              226       `
+common.o/
+clk-regmap.o/
+clk-alpha-pll.o/
+clk-pll.o/
+clk-rcg.o/
+clk-rcg2.o/
+clk-branch.o/
+clk-regmap-divider.o/
+clk-regmap-mux.o/
+clk-regmap-mux-div.o/
+reset.o/
+clk-voter.o/
+clk-dummy.o/
+clk-debug.o/
+gdsc-regulator.o/
+gdsc.o/
+
+/0              0           0     0     644     170568    `
+/10             0           0     0     644     125280    `
+/24            /0           0     0     644     278872    `
+/41             0           0     0     644     133304    `
+/52             0           0     0     644     168096    `
+/63             0           0     0     644     243824    `
+/75             0           0     0     644     133408    `
+/89             0           0     0     644     101664    `
+/111            0           0     0     644     99368     `
+/129            0           0     0     644     119000    `
+/151            0           0     0     644     8728      `
+/160            0           0     0     644     127232    `
+/173            0           0     0     644     129704    `
+/186            0           0     0     644     160536    `
+/199            0           0     0     644     239576    `
+/217            0           0     0     644     142176    `

@@ -1,0 +1,1 @@
+cmd_drivers/staging/android/built-in.o :=   rm -f drivers/staging/android/built-in.o; aarch64-linux-android-ar rcSTPD drivers/staging/android/built-in.o drivers/staging/android/ion/built-in.o drivers/staging/android/ashmem.o drivers/staging/android/lowmemorykiller.o drivers/staging/android/freecess.o drivers/staging/android/freecess_pkg.o drivers/staging/android/lmkd_debug.o 

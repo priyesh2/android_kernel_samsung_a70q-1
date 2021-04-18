@@ -1,0 +1,1 @@
+cmd_drivers/staging/built-in.o :=   rm -f drivers/staging/built-in.o; aarch64-linux-android-ar rcSTPD drivers/staging/built-in.o drivers/staging/media/built-in.o drivers/staging/typec/built-in.o drivers/staging/iio/built-in.o drivers/staging/android/built-in.o drivers/staging/samsung/built-in.o drivers/staging/sti/built-in.o 

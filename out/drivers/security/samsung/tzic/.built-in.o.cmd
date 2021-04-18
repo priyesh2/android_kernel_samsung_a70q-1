@@ -1,0 +1,1 @@
+cmd_drivers/security/samsung/tzic/built-in.o :=   rm -f drivers/security/samsung/tzic/built-in.o; aarch64-linux-android-ar rcSTPD drivers/security/samsung/tzic/built-in.o drivers/security/samsung/tzic/tzic64.o drivers/security/samsung/tzic/tzic_qsee.o 

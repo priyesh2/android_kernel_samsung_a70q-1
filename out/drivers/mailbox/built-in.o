@@ -1,0 +1,10 @@
+!<thin>
+//                                              68        `
+mailbox.o/
+qcom-apcs-ipc-mailbox.o/
+qcom-rpmh-mailbox.o/
+msm_qmp.o/
+/0              0           0     0     644     171864    `
+/11             0           0     0     644     140720    `
+/36             0           0     0     644     470248    `
+/57             0           0     0     644     270816    `

@@ -1,0 +1,1 @@
+cmd_drivers/mmc/host/built-in.o :=   rm -f drivers/mmc/host/built-in.o; aarch64-linux-android-ar rcSTPD drivers/mmc/host/built-in.o drivers/mmc/host/sdhci.o drivers/mmc/host/sdhci-pltfm.o drivers/mmc/host/sdhci-msm.o drivers/mmc/host/cmdq_hci.o drivers/mmc/host/cmdq_hci-crypto.o drivers/mmc/host/cmdq_hci-crypto-qti.o 

@@ -1,0 +1,1 @@
+cmd_drivers/net/wireless/cnss_utils/built-in.o :=   rm -f drivers/net/wireless/cnss_utils/built-in.o; aarch64-linux-android-ar rcSTPD drivers/net/wireless/cnss_utils/built-in.o drivers/net/wireless/cnss_utils/cnss_utils.o 

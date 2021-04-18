@@ -1,0 +1,1 @@
+cmd_drivers/cpuidle/built-in.o :=   rm -f drivers/cpuidle/built-in.o; aarch64-linux-android-ar rcSTPD drivers/cpuidle/built-in.o drivers/cpuidle/cpuidle.o drivers/cpuidle/driver.o drivers/cpuidle/governor.o drivers/cpuidle/sysfs.o drivers/cpuidle/governors/built-in.o drivers/cpuidle/lpm-levels.o drivers/cpuidle/lpm-levels-of.o 

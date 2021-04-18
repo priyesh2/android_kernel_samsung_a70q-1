@@ -1,0 +1,9 @@
+kernel/drivers/power/supply/qcom_r1/step-chg-jeita.ko
+kernel/drivers/power/supply/qcom_r1/battery.ko
+kernel/drivers/power/supply/qcom_r1/qpnp-smb5.ko
+kernel/drivers/power/supply/qcom_r1/smb5-lib.ko
+kernel/drivers/power/supply/qcom_r1/pmic-voter.ko
+kernel/drivers/power/supply/qcom_r1/storm-watch.ko
+kernel/drivers/power/supply/qcom_r1/schgm-flash.ko
+kernel/drivers/power/supply/qcom_r1/smb1390-charger-psy.ko
+kernel/drivers/power/supply/qcom_r1/pmic-voter.ko

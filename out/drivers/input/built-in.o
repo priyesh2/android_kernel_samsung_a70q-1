@@ -1,0 +1,53 @@
+!<thin>
+//                                              556       `
+input.o/
+input-compat.o/
+input-mt.o/
+ff-core.o/
+sec_tsp_log.o/
+sec_cmd.o/
+sec_tclm_v2.o/
+ff-memless.o/
+input-leds.o/
+evdev.o/
+keyboard/atkbd.o/
+keyboard/gpio_keys.o/
+keyboard/hall_ic.o/
+keyboard/certify_hall_ic.o/
+touchscreen/of_touchscreen.o/
+touchscreen/imagis_40xx/ist40xx.o/
+touchscreen/imagis_40xx/ist40xx_misc.o/
+touchscreen/imagis_40xx/ist40xx_sys.o/
+touchscreen/imagis_40xx/ist40xx_update.o/
+touchscreen/imagis_40xx/ist40xx_sec.o/
+touchscreen/imagis_40xx/ist40xx_cmcs.o/
+misc/qpnp-power-on.o/
+misc/uinput.o/
+sec_tsp_dumpkey.o/
+sec_secure_touch.o/
+
+/0              0           0     0     644     790928    `
+/9              0           0     0     644     147952    `
+/25             0           0     0     644     168624    `
+/37             0           0     0     644     155576    `
+/48             0           0     0     644     180968    `
+/63             0           0     0     644     179616    `
+/74             0           0     0     644     199088    `
+/89             0           0     0     644     169504    `
+/103            0           0     0     644     149672    `
+/117            0           0     0     644     332368    `
+/126            0           0     0     644     252488    `
+/144            0           0     0     644     250432    `
+/166            0           0     0     644     182528    `
+/186            0           0     0     644     180824    `
+/214            0           0     0     644     150768    `
+/244            0           0     0     644     502696    `
+/279            0           0     0     644     320552    `
+/319            0           0     0     644     310352    `
+/358            0           0     0     644     376408    `
+/400            0           0     0     644     1149288   `
+/439            0           0     0     644     281112    `
+/479           /0           0     0     644     504256    `
+/501            0           0     0     644     260520    `
+/516            0           0     0     644     16784     `
+/535            0           0     0     644     154688    `

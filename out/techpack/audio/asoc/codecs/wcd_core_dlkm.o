@@ -1,0 +1,31 @@
+!<thin>
+//                                              268       `
+wcd9xxx-rst.o/
+wcd9xxx-core-init.o/
+wcd9xxx-core.o/
+wcd9xxx-irq.o/
+wcd9xxx-slimslave.o/
+wcd9xxx-utils.o/
+wcd9335-regmap.o/
+wcd9335-tables.o/
+msm-cdc-pinctrl.o/
+msm-cdc-supply.o/
+wcd934x/wcd934x-regmap.o/
+wcd934x/wcd934x-tables.o/
+wcd9360/wcd9360-regmap.o/
+wcd-irq.o/
+
+/0              0           0     0     644     178024    `
+/15             0           0     0     644     7120      `
+/36             0           0     0     644     292416    `
+/52             0           0     0     644     212912    `
+/67             0           0     0     644     193648    `
+/88            /0           0     0     644     255576    `
+/105            0           0     0     644     149312    `
+/123            0           0     0     644     8536      `
+/141            0           0     0     644     155024    `
+/160            0           0     0     644     176584    `
+/178            0           0     0     644     151752    `
+/204            0           0     0     644     11056     `
+/230            0           0     0     644     147656    `
+/256            0           0     0     644     94984     `
