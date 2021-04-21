@@ -1,1 +1,0 @@
-cmd_drivers/usb/notify/usb_notify_layer.o :=  rm -f drivers/usb/notify/usb_notify_layer.o; aarch64-linux-android-ar rcSTPD drivers/usb/notify/usb_notify_layer.o drivers/usb/notify/usb_notify.o drivers/usb/notify/usb_notify_sysfs.o drivers/usb/notify/dock_notify.o 

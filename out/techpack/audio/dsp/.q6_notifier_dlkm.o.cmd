@@ -1,1 +1,0 @@
-cmd_techpack/audio/dsp/q6_notifier_dlkm.o :=  rm -f techpack/audio/dsp/q6_notifier_dlkm.o; aarch64-linux-android-ar rcSTPD techpack/audio/dsp/q6_notifier_dlkm.o techpack/audio/dsp/audio_notifier.o techpack/audio/dsp/audio_ssr.o 

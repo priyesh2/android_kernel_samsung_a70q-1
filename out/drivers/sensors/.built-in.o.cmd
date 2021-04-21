@@ -1,1 +1,0 @@
-cmd_drivers/sensors/built-in.o :=   rm -f drivers/sensors/built-in.o; aarch64-linux-android-ar rcSTPD drivers/sensors/built-in.o drivers/sensors/sensors_ssc.o drivers/sensors/sensors_core.o drivers/sensors/a96t3x6.o 

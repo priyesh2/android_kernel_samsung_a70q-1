@@ -1,1 +1,0 @@
-cmd_drivers/gpu/drm/bridge/built-in.o :=   rm -f drivers/gpu/drm/bridge/built-in.o; aarch64-linux-android-ar rcSTPD drivers/gpu/drm/bridge/built-in.o drivers/gpu/drm/bridge/synopsys/built-in.o drivers/gpu/drm/bridge/analogix-anx7625.o drivers/gpu/drm/bridge/lt9611.o 

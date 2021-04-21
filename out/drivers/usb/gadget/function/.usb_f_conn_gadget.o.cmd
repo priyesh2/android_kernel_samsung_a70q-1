@@ -1,1 +1,0 @@
-cmd_drivers/usb/gadget/function/usb_f_conn_gadget.o :=  rm -f drivers/usb/gadget/function/usb_f_conn_gadget.o; aarch64-linux-android-ar rcSTPD drivers/usb/gadget/function/usb_f_conn_gadget.o drivers/usb/gadget/function/f_conn_gadget.o 

@@ -1,1 +1,0 @@
-cmd_drivers/misc/fpr_FingerprintCard/built-in.o :=   rm -f drivers/misc/fpr_FingerprintCard/built-in.o; aarch64-linux-android-ar rcSTPD drivers/misc/fpr_FingerprintCard/built-in.o drivers/misc/fpr_FingerprintCard/fpc1020.o 

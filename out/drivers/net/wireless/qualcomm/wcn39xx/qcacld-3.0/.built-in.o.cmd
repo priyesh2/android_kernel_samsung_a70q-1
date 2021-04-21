@@ -1,1 +1,0 @@
-cmd_drivers/net/wireless/qualcomm/wcn39xx/qcacld-3.0/built-in.o :=   rm -f drivers/net/wireless/qualcomm/wcn39xx/qcacld-3.0/built-in.o; aarch64-linux-android-ar rcSTPD drivers/net/wireless/qualcomm/wcn39xx/qcacld-3.0/built-in.o drivers/net/wireless/qualcomm/wcn39xx/qcacld-3.0/wlan.o 

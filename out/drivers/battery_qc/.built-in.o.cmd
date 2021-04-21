@@ -1,1 +1,0 @@
-cmd_drivers/battery_qc/built-in.o :=   rm -f drivers/battery_qc/built-in.o; aarch64-linux-android-ar rcSTPD drivers/battery_qc/built-in.o drivers/battery_qc/sec_battery_qc.o drivers/battery_qc/sec_battery_sysfs_qc.o drivers/battery_qc/sec_battery_dt_qc.o drivers/battery_qc/sec_battery_ttf.o drivers/battery_qc/sec_cisd_qc.o 

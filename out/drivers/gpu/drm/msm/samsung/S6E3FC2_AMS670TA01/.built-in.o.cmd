@@ -1,1 +1,0 @@
-cmd_drivers/gpu/drm/msm/samsung/S6E3FC2_AMS670TA01/built-in.o :=   rm -f drivers/gpu/drm/msm/samsung/S6E3FC2_AMS670TA01/built-in.o; aarch64-linux-android-ar rcSTPD drivers/gpu/drm/msm/samsung/S6E3FC2_AMS670TA01/built-in.o drivers/gpu/drm/msm/samsung/S6E3FC2_AMS670TA01/ss_dsi_panel_S6E3FC2_AMS670TA01.o 

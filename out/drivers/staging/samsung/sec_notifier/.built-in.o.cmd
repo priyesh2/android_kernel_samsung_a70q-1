@@ -1,1 +1,0 @@
-cmd_drivers/staging/samsung/sec_notifier/built-in.o :=   rm -f drivers/staging/samsung/sec_notifier/built-in.o; aarch64-linux-android-ar rcSTPD drivers/staging/samsung/sec_notifier/built-in.o drivers/staging/samsung/sec_notifier/vbus_notifier.o 

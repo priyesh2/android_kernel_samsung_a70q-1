@@ -1,1 +1,0 @@
-cmd_drivers/samsung/misc/built-in.o :=   rm -f drivers/samsung/misc/built-in.o; aarch64-linux-android-ar rcSTPD drivers/samsung/misc/built-in.o drivers/samsung/misc/sec_misc.o drivers/samsung/misc/sec_smem.o drivers/samsung/misc/sec_argos.o 
