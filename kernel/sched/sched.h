@@ -1946,7 +1946,6 @@ static inline int hrtick_enabled(struct rq *rq)
 u64 sched_ktime_clock(void);
 #else
 
-#define sched_ktime_clock ktime_get_ns
 #endif
 
 #ifdef CONFIG_SMP
