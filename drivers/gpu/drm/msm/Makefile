@@ -244,5 +244,5 @@ obj-y += samsung_lego/
 else
 obj-y += samsung/
 endif
-endif
+
 

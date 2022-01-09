@@ -6224,7 +6224,6 @@ CONFIG_MST_LPM_DISABLE=y
 # CONFIG_INTEGRITY is not set
 # CONFIG_IMA is not set
 # CONFIG_EVM is not set
-<<<<<<< HEAD
 # CONFIG_FIVE is not set
 # CONFIG_SECURITY_DEFEX is not set
 # CONFIG_DEFEX_KERNEL_ONLY is not set
