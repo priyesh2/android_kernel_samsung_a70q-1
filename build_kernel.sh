@@ -20,7 +20,7 @@ export CLANG_PATH=$HOME/proton-clang/bin
 export PATH="$CLANG_PATH:$PATH"
 export CROSS_COMPILE=aarch64-linux-gnu-
 export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
-export KBUILD_BUILD_USER=rundi
+export KBUILD_BUILD_USER=cerebro
 export KBUILD_BUILD_HOST=a70q
 
 START=$(date +"%s")
@@ -42,7 +42,7 @@ echo "==> Verify Image.gz.dtb and dtbo.img..."
 echo
 
 ls $PWD/out/arch/arm64/boot/Image.gz-dtb
-ls $PWD/out/arch/arm64/boot/dtbo.img
+#ls $PWD/out/arch/arm64/boot/dtbo.img
 
 END=$(date +"%s")
 DIFF=$((END - START))
