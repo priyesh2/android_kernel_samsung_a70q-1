@@ -22,13 +22,7 @@ jobs:
         echo "::set-output name=short_sha::$(git rev-parse HEAD | cut -b 1-8 -)"
         echo "::set-output name=release_name::Storm"
 
-    - name: "Pre-build message to Telegram"
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.CHANNEL_ID }}
-        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        message: Building ${{ steps.vars.outputs.release_name }} on ${{ steps.vars.outputs.short_sha }}. https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
+  
     - name: "Android kernel build"
       uses: lemniskett/android-kernel-actions@master
       id: build
@@ -40,14 +34,7 @@ jobs:
         defconfig: storm_defconfig
         image: Image.gz-dtb
 
-    - name: "Post build to Telegram"
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.CHANNEL_ID }}
-        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        message: ${{ steps.vars.outputs.release_name }} on ${{ steps.vars.outputs.short_sha }} is built!, took ${{ steps.build.outputs.elapsed_time }} seconds.
-        document: ${{ steps.build.outputs.outfile }}
-        
+       
     - name: "Alert failed build"
       uses: appleboy/telegram-action@master
       if: ${{ failure() }}
