@@ -1386,8 +1386,15 @@ int __udp_enqueue_schedule_skb(struct sock *sk, struct sk_buff *skb)
 	 * queue is full; always allow at least a packet
 	 */
 	rmem = atomic_read(&sk->sk_rmem_alloc);
-	if (rmem > sk->sk_rcvbuf)
-		goto drop;
+	if (rmem > sk->sk_rcvbuf) {
+		if (sk->sk_rcvbuf < sysctl_rmem_max) {
+			/* increase sk_rcvbuf twice */
+			sk->sk_rcvbuf = min(sk->sk_rcvbuf * 2, (int)sysctl_rmem_max);
+		}
+
+		if (rmem > sk->sk_rcvbuf)
+			goto drop;
+	}
 
 	/* Under mem pressure, it might be helpful to help udp_recvmsg()
 	 * having linear skbs :
@@ -1967,7 +1974,7 @@ static int udp_queue_rcv_one_skb(struct sock *sk, struct sk_buff *skb)
 	/*
 	 * 	UDP-Lite specific tests, ignored on UDP sockets
 	 */
-	if ((is_udplite & UDPLITE_RECV_CC)  &&  UDP_SKB_CB(skb)->partial_cov) {
+	if ((up->pcflag & UDPLITE_RECV_CC)  &&  UDP_SKB_CB(skb)->partial_cov) {
 
 		/*
 		 * MIB statistics other than incrementing the error count are
@@ -2236,6 +2243,7 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 
 	sk = skb_steal_sock(skb);
 	if (sk) {
+		int ret;
 		struct dst_entry *dst = skb_dst(skb);
 #ifdef CONFIG_KNOX_NCM
 		// KNOX NPA - START
@@ -2254,7 +2262,7 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 		// KNOX NPA - START
 		/* function to handle open flows with incoming udp packets */
 		if (check_ncm_flag()) {
-			if ( (skb) && (sk) && (sk->sk_protocol == IPPROTO_UDP) ) {
+			if ( (sk) && (sk->sk_protocol == IPPROTO_UDP) ) {
 				ct = nf_ct_get(skb, &ctinfo);
 				if ( (ct) && (!atomic_read(&ct->startFlow)) && (!nf_ct_is_dying(ct)) ) {
 					tuple = &ct->tuplehash[IP_CT_DIR_ORIGINAL].tuple;
@@ -2265,7 +2273,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 							atomic_set(&ct->startFlow, 1);
 							if ( check_intermediate_flag() ) {
 								/* Use 'atomic_set(&ct->intermediateFlow, 1); ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);' if struct nf_conn->timeout is of type u32; */
-								atomic_set(&ct->intermediateFlow, 1); ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);
+								ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);
+								atomic_set(&ct->intermediateFlow, 1);
 								/* Use 'unsigned long timeout = ct->timeout.expires - jiffies;
 										if ( (timeout > 0) && ((timeout/HZ) > 5) ) {
 											atomic_set(&ct->intermediateFlow, 1);
@@ -2318,16 +2327,10 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 		struct nf_conntrack_tuple *tuple = NULL;
 		char srcaddr[INET6_ADDRSTRLEN_NAP];
 		char dstaddr[INET6_ADDRSTRLEN_NAP];
-		// KNOX NPA - END
 
-		if (inet_get_convert_csum(sk) && uh->check && !IS_UDPLITE(sk))
-			skb_checksum_try_convert(skb, IPPROTO_UDP, uh->check,
-						 inet_compute_pseudo);
-
-		/* START_OF_KNOX_NPA */
 		/* function to handle open flows with incoming udp packets */
 		if (check_ncm_flag()) {
-			if ( (skb) && (sk) && (sk->sk_protocol == IPPROTO_UDP) ) {
+			if ( (sk) && (sk->sk_protocol == IPPROTO_UDP) ) {
 				ct = nf_ct_get(skb, &ctinfo);
 				if ( (ct) && (!atomic_read(&ct->startFlow)) && (!nf_ct_is_dying(ct)) ) {
 					tuple = &ct->tuplehash[IP_CT_DIR_ORIGINAL].tuple;
@@ -2338,7 +2341,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 							atomic_set(&ct->startFlow, 1);
 							if ( check_intermediate_flag() ) {
 								/* Use 'atomic_set(&ct->intermediateFlow, 1); ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);' if struct nf_conn->timeout is of type u32; */
-								atomic_set(&ct->intermediateFlow, 1); ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);
+								ct->npa_timeout = ((u32)(jiffies)) + (get_intermediate_timeout() * HZ);
+								atomic_set(&ct->intermediateFlow, 1);
 								/* Use 'unsigned long timeout = ct->timeout.expires - jiffies;
 										if ( (timeout > 0) && ((timeout/HZ) > 5) ) {
 											atomic_set(&ct->intermediateFlow, 1);
@@ -2373,17 +2377,8 @@ int __udp4_lib_rcv(struct sk_buff *skb, struct udp_table *udptable,
 		// KNOX NPA - END
 #endif
 
-		ret = udp_queue_rcv_skb(sk, skb);
-
-		/* a return value > 0 means to resubmit the input, but
-		 * it wants the return to be -protocol, or 0
-		 */
-		if (ret > 0)
-			return -ret;
-		return 0;
-	}
-	if (sk)
 		return udp_unicast_rcv_skb(sk, skb, uh);
+	}
 
 	if (!xfrm4_policy_check(NULL, XFRM_POLICY_IN, skb))
 		goto drop;
