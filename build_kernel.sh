@@ -50,3 +50,23 @@ DIFF=$((END - START))
 echo
 echo "==> Kernel compiled successfully in $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
 echo
+
+echo
+echo "==> Installing telegram-upload module..."
+echo
+
+pip3 install -U telegram-upload
+
+
+echo
+echo "==> Uploading Image.gz-dtb..."
+echo
+
+
+cd $PWD/out/arch/arm64/boot/
+
+telegram-upload Image.gz-dtb
+
+echo
+echo "==> Image had been uploaded to your TG account"
+echo
